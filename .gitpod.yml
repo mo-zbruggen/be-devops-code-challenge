@@ -6,7 +6,7 @@ tasks:
     init: echo "Welcome to the coding assessment!"
     command: |
       echo "Available projects: java-app/, python-app/"
-      
+
   # - name: Terminal
   #   openMode: split-right
   #   command: bash
@@ -23,9 +23,6 @@ ports:
   - port: 5000
     onOpen: open-preview
     description: Python App (Flask)
-
-features:
-  docker: true
 
 vscode:
   extensions:
