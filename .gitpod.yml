@@ -1,0 +1,35 @@
+image:
+  file: .gitpod.Dockerfile
+
+tasks:
+  - name: Setup
+    init: echo "Welcome to the coding assessment!"
+    command: |
+      echo "Available projects: java-app/, python-app/"
+      
+  # - name: Terminal
+  #   openMode: split-right
+  #   command: bash
+
+  - name: Start docker-compose
+    init: docker-compose build
+    command: docker-compose up -d
+
+ports:
+  - port: 8080
+    onOpen: open-preview
+    description: Java App (Spring Boot)
+
+  - port: 5000
+    onOpen: open-preview
+    description: Python App (Flask)
+
+features:
+  docker: true
+
+vscode:
+  extensions:
+    - vscjava.vscode-java-pack
+    - mspython.python
+    - ms-azuretools.vscode-docker
+    - ms-kubernetes-tools.vscode-kubernetes-tools
