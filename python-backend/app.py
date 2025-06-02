@@ -1,4 +1,4 @@
-from flask import Flask, jsonify, request, abort
+from flask import Flask, jsonify, request, abort, redirect, url_for
 
 app = Flask(__name__)
 
@@ -20,7 +20,7 @@ def find_note(note_id):
 
 @app.route("/")
 def index():
-	return { "msg": "Hello world from Python! Go to /notes!" }
+	return redirect(url_for('get_notes'))
 
 @app.route("/notes", methods=["GET"])
 def get_notes():
@@ -75,4 +75,4 @@ def update_note(note_id):
 
 
 if __name__ == "__main__":
-	app.run(debug=True)
+	app.run(debug=True, host='0.0.0.0', port=5000)
