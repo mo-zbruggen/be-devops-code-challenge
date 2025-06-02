@@ -29,4 +29,3 @@ vscode:
     - vscjava.vscode-java-pack
     - mspython.python
     - ms-azuretools.vscode-docker
-    - ms-kubernetes-tools.vscode-kubernetes-tools
